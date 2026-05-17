@@ -1,0 +1,55 @@
+Hi, I'm a Lead Java & AI/LLM Engineer
+
+Building AI‑accelerated, cloud‑native systems | 14+ years in Java, Microservices & AWS | LLMs, RAG, Agents, MCP
+
+I’m a Senior Java Full Stack Engineer with 14+ years of experience designing and scaling enterprise platforms across insurance, finance, and energy.
+My recent focus is on AI‑accelerated engineering, where I combine deep backend expertise with modern LLM, RAG, and agentic workflows to build production‑ready intelligent systems.
+
+I’m passionate about:
+
+🧠 LLM engineering (LangChain, LangGraph, OpenAI APIs)
+
+🔍 RAG pipelines with vector search & retrieval optimization
+
+🤖 Agentic automation & Model Context Protocol (MCP) tooling
+
+☁️ Cloud‑native microservices on AWS
+
+⚙️ Platform modernization & intelligent developer tooling
+
+🚀 Boosting engineering velocity with AI‑powered automation
+
+🛠️ Tech Stack
+AI / LLM / RAG
+LangChain, LangGraph
+
+RAG pipelines, Vector DBs (ChromaDB, Pinecone)
+
+OpenAI / GPT APIs
+
+MCP server development
+
+Multi‑agent orchestration
+
+Backend Engineering
+Java 8–17, Spring Boot, Spring Cloud
+
+Microservices, API Gateway, Service Mesh
+
+Kafka, JMS, IBM MQ
+
+REST, GraphQL
+
+Cloud & DevOps
+AWS (Lambda, ECS/EKS, S3, DynamoDB, RDS, API Gateway)
+
+Docker, Kubernetes, Helm
+
+Terraform, CDK, GitHub Actions, Jenkins
+
+Databases & Observability
+Oracle, PostgreSQL, MySQL, MongoDB
+
+ELK Stack, Splunk, AppDynamics
+
+Distributed tracing, correlation‑ID logging
