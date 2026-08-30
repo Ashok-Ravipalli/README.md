@@ -1,1 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ashok Ravipalli — Lead Software Developer &amp; AI Systems Engineer</title>
+<meta name="description" content="Ashok Ravipalli — Lead Software Developer with 14+ years building enterprise Java systems and production-grade agentic AI." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-soft:#0d1220;
+    --panel:#111726;
+    --panel-2:#151c2e;
+    --border:rgba(230,233,239,0.09);
+    --border-strong:rgba(230,233,239,0.16);
+    --text:#e6e9ef;
+    --text-muted:#8b93a7;
+    --text-faint:#5b6478;
+    --accent:#f2a65a;
+    --accent-soft:rgba(242,166,90,0.12);
+    --accent-2:#57d9c4;
+    --accent-2-soft:rgba(87,217,196,0.12);
+    --accent-contrast:#141014;
+    --radius:10px;
+    --maxw:1140px;
+    --font-display:'Space Grotesk', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(230,233,239,0.055) 1px, transparent 0);
+    background-size:26px 26px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+
+  a{color:inherit; text-decoration:none;}
+  ul{margin:0; padding:0; list-style:none;}
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+
+  ::selection{background:var(--accent-soft); color:var(--accent);}
+
+  /* ---------- eyebrow / mono labels ---------- */
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 16px;
+  }
+  .eyebrow::before{content:"//"; color:var(--text-faint);}
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:#fdfdfd;
+  }
+
+  /* ---------- top nav ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,14,20,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    font-family:var(--font-mono);
+    font-size:15px;
+    font-weight:600;
+    color:var(--text);
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent);}
+  nav.links{display:flex; gap:34px;}
+  nav.links a{
+    font-family:var(--font-mono);
+    font-size:13.5px;
+    color:var(--text-muted);
+    position:relative;
+    padding:4px 0;
+    transition:color .2s ease;
+  }
+  nav.links a:hover, nav.links a.active{color:var(--text);}
+  nav.links a.active::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-6px; height:2px;
+    background:var(--accent);
+    border-radius:2px;
+  }
+  .nav-cta{
+    font-family:var(--font-mono);
+    font-size:13px;
+    padding:9px 16px;
+    border:1px solid var(--border-strong);
+    border-radius:7px;
+    color:var(--text);
+    white-space:nowrap;
+  }
+  .nav-cta:hover{border-color:var(--accent); color:var(--accent);}
+  .nav-social{display:flex; align-items:center; gap:8px;}
+  .icon-btn{
+    width:36px; height:36px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--border-strong);
+    border-radius:7px;
+    color:var(--text-muted);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .icon-btn svg{width:16px; height:16px;}
+  .icon-btn:hover{border-color:var(--accent); color:var(--accent);}
+  .menu-btn{display:none; background:none; border:1px solid var(--border-strong); border-radius:7px; color:var(--text); width:38px; height:38px; align-items:center; justify-content:center; cursor:pointer;}
+  .menu-btn svg{width:18px; height:18px;}
+
+  /* ---------- hero ---------- */
+  section.hero{padding:88px 0 96px; position:relative;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-name{
+    font-size:clamp(38px, 5.4vw, 60px);
+    line-height:1.06;
+  }
+  .hero-name .accent{color:var(--accent);}
+  .role-line{
+    font-family:var(--font-mono);
+    font-size:clamp(15px, 1.8vw, 18px);
+    color:var(--accent-2);
+    margin:14px 0 22px;
+  }
+  .hero-desc{
+    color:var(--text-muted);
+    font-size:16.5px;
+    max-width:520px;
+    margin:0 0 32px;
+  }
+  .hero-desc b{color:var(--text); font-weight:600;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:30px;}
+  .btn{
+    font-family:var(--font-mono);
+    font-size:13.5px;
+    font-weight:500;
+    padding:13px 22px;
+    border-radius:8px;
+    display:inline-flex; align-items:center; gap:8px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{
+    background:var(--accent);
+    color:var(--accent-contrast);
+  }
+  .btn-primary:hover{box-shadow:0 0 0 4px var(--accent-soft);}
+  .btn-outline{
+    border-color:var(--border-strong);
+    color:var(--text);
+  }
+  .btn-outline:hover{border-color:var(--accent); color:var(--accent);}
+
+  .hero-tags{display:flex; flex-wrap:wrap; gap:9px;}
+  .tag{
+    font-family:var(--font-mono);
+    font-size:12px;
+    padding:6px 11px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    color:var(--text-muted);
+    background:var(--panel);
+  }
+  .tag.ai{border-color:rgba(87,217,196,0.35); color:var(--accent-2);}
+
+  /* terminal card */
+  .term-wrap{position:relative;}
+  .term-glow{
+    position:absolute; inset:-40px;
+    background:radial-gradient(circle at 60% 30%, rgba(242,166,90,0.16), transparent 60%);
+    filter:blur(10px);
+    z-index:0;
+  }
+  .terminal{
+    position:relative; z-index:1;
+    background:var(--panel);
+    border:1px solid var(--border-strong);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
+  }
+  .term-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:12px 16px;
+    background:var(--panel-2);
+    border-bottom:1px solid var(--border);
+  }
+  .term-dot{width:10px; height:10px; border-radius:50%; background:#3a3f4d;}
+  .term-title{
+    margin-left:8px;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-faint);
+  }
+  .term-body{
+    padding:22px 22px 24px;
+    font-family:var(--font-mono);
+    font-size:13.4px;
+    line-height:1.85;
+  }
+  .term-body .k{color:#8fb8e0;}
+  .term-body .s{color:var(--accent-2);}
+  .term-body .c{color:var(--text-faint);}
+  .term-body .amber{color:var(--accent);}
+  .cursor{display:inline-block; width:7px; height:14px; background:var(--accent); margin-left:2px; animation:blink 1.1s steps(1) infinite; vertical-align:-2px;}
+  @keyframes blink{50%{opacity:0;}}
+
+  .hero-strip{
+    margin-top:20px;
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+
+  /* ---------- generic section shell ---------- */
+  section{padding:92px 0; border-top:1px solid var(--border);}
+  .section-head{margin-bottom:44px; max-width:640px;}
+  .section-head h2{font-size:clamp(26px,3vw,34px);}
+  .section-head p{color:var(--text-muted); margin-top:10px; font-size:15.5px;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px;}
+  .about-copy p{color:var(--text-muted); font-size:15.5px; margin:0 0 16px;}
+  .about-copy b{color:var(--text); font-weight:600;}
+  .edu{margin-top:26px; border-top:1px solid var(--border); padding-top:22px;}
+  .edu-item{display:flex; justify-content:space-between; gap:16px; padding:8px 0; font-size:14.5px;}
+  .edu-item span:first-child{color:var(--text);}
+  .edu-item span:last-child{color:var(--text-faint); font-family:var(--font-mono); font-size:12.5px; white-space:nowrap;}
+
+  .stat-panel{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:8px;
+  }
+  .stat-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:18px 16px;
+    border-bottom:1px solid var(--border);
+  }
+  .stat-row:last-child{border-bottom:none;}
+  .stat-num{font-family:var(--font-display); font-size:26px; color:var(--accent); font-weight:700;}
+  .stat-label{font-family:var(--font-mono); font-size:12.5px; color:var(--text-muted); text-align:right; max-width:180px;}
+
+  /* ---------- skills ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+  }
+  .skill-card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .skill-card:hover{border-color:var(--border-strong); transform:translateY(-2px);}
+  .skill-card.featured{
+    grid-column:span 3;
+    border-color:rgba(87,217,196,0.3);
+    background:linear-gradient(180deg, rgba(87,217,196,0.06), transparent 60%), var(--panel);
+  }
+  .skill-card-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;}
+  .skill-card-head h3{font-size:15px; font-family:var(--font-mono); font-weight:600; color:var(--text);}
+  .skill-card.featured .skill-card-head h3{color:var(--accent-2);}
+  .skill-idx{font-family:var(--font-mono); font-size:11.5px; color:var(--text-faint);}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+
+  /* ---------- experience timeline ---------- */
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{
+    content:"";
+    position:absolute; left:5px; top:6px; bottom:6px;
+    width:1px;
+    background:linear-gradient(var(--border-strong), var(--border));
+  }
+  .job{position:relative; padding-bottom:52px;}
+  .job:last-child{padding-bottom:0;}
+  .job-dot{
+    position:absolute; left:-28px; top:4px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--accent);
+  }
+  .job-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 20px; margin-bottom:6px;}
+  .job-role{font-family:var(--font-display); font-size:19px; font-weight:600; color:#fdfdfd;}
+  .job-date{font-family:var(--font-mono); font-size:12.5px; color:var(--text-faint); white-space:nowrap; padding-top:4px;}
+  .job-co{font-family:var(--font-mono); font-size:13px; color:var(--accent-2); margin-bottom:14px;}
+  .job-proj{font-size:13.5px; color:var(--text-faint); margin-bottom:12px;}
+  .job ul{margin:0 0 16px; padding-left:0;}
+  .job li{
+    list-style:none; position:relative; padding-left:18px;
+    color:var(--text-muted); font-size:14.5px; margin-bottom:8px;
+  }
+  .job li::before{content:"▸"; position:absolute; left:0; color:var(--accent); font-size:12px; top:2px;}
+  .job li b{color:var(--text); font-weight:600;}
+
+  /* ---------- projects ---------- */
+  .proj-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;}
+  .proj-card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:26px;
+    display:flex; flex-direction:column; gap:14px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .proj-card:hover{border-color:var(--accent-2); transform:translateY(-3px);}
+  .proj-num{font-family:var(--font-mono); font-size:12px; color:var(--text-faint);}
+  .proj-card h3{font-size:17px;}
+  .proj-card p{font-size:14px; color:var(--text-muted); margin:0; flex-grow:1;}
+  .proj-card .chip-row{margin-top:4px;}
+
+  /* ---------- contact ---------- */
+  .contact-panel{
+    background:var(--panel);
+    border:1px solid var(--border-strong);
+    border-radius:14px;
+    padding:52px;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:40px;
+    align-items:center;
+  }
+  .contact-panel h2{font-size:clamp(24px,3vw,32px); margin-bottom:14px;}
+  .contact-panel p{color:var(--text-muted); font-size:15px; max-width:440px;}
+  .contact-list{display:flex; flex-direction:column; gap:14px;}
+  .contact-row{
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:var(--font-mono); font-size:13.5px;
+    border:1px solid var(--border); border-radius:8px;
+    padding:13px 16px;
+    color:var(--text);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .contact-row span.k{color:var(--text-faint);}
+  .contact-row:hover{border-color:var(--accent); color:var(--accent);}
+
+  footer{
+    padding:30px 0 44px;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-faint);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr; gap:44px;}
+    .about-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:repeat(2,1fr);}
+    .skill-card.featured{grid-column:span 2;}
+    .proj-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-panel{grid-template-columns:1fr; padding:36px 28px;}
+  }
+  @media (max-width:700px){
+    nav.links{
+      position:fixed; top:64px; left:0; right:0;
+      background:var(--bg-soft);
+      border-bottom:1px solid var(--border);
+      flex-direction:column; gap:0;
+      padding:8px 28px 18px;
+      transform:translateY(-140%);
+      transition:transform .25s ease;
+    }
+    nav.links.open{transform:translateY(0);}
+    nav.links a{padding:12px 0; border-bottom:1px solid var(--border);}
+    .nav-cta{display:none;}
+    .menu-btn{display:flex;}
+    .skills-grid{grid-template-columns:1fr;}
+    .skill-card.featured{grid-column:span 1;}
+    .proj-grid{grid-template-columns:1fr;}
+    .job-head{flex-direction:column;}
+    section{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <div class="logo"><span class="dot"></span>ravipalli.dev</div>
+    <nav class="links" id="navLinks">
+      <a href="#home" class="active">home</a>
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="nav-social">
+        <a class="icon-btn" href="https://github.com/Ashok-Ravipalli" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.67.8.56A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://linkedin.com/in/ashok-ravipalli" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        </a>
+      </div>
+      <a class="nav-cta" href="mailto:ashokravipalli777@gmail.com">say hello</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">14+ years in production</p>
+        <h1 class="hero-name">Ashok<br>Rav<span class="accent">i</span>palli</h1>
+        <p class="role-line">Lead Software Developer — Agentic AI &amp; Enterprise Java Systems</p>
+        <p class="hero-desc">
+          I architect and ship <b>Java / Spring Boot microservices</b> for Fortune 500&nbsp;claims platforms,
+          then extend them with <b>LangChain agents, RAG pipelines and MCP servers</b> — taking AI from
+          notebook to production on <b>Azure</b>, at enterprise scale.
+        </p>
+        <div class="cta-row">
+          <a href="#experience" class="btn btn-primary">View experience →</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+        </div>
+        <div class="hero-tags">
+          <span class="tag">Java 8–17</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Angular / React 19</span>
+          <span class="tag ai">LangChain</span>
+          <span class="tag ai">RAG</span>
+          <span class="tag ai">MCP Servers</span>
+          <span class="tag">Azure · AKS</span>
+          <span class="tag">PostgreSQL · Oracle</span>
+        </div>
+      </div>
+
+      <div class="term-wrap">
+        <div class="term-glow"></div>
+        <div class="terminal">
+          <div class="term-bar">
+            <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+            <span class="term-title">~/ashok/profile.yaml</span>
+          </div>
+          <div class="term-body">
+<span class="k">name:</span> <span class="s">"Ashok Ravipalli"</span><br>
+<span class="k">title:</span> <span class="s">"Lead Software Developer"</span><br>
+<span class="k">experience:</span> <span class="amber">14+ years</span><br>
+<span class="k">based_in:</span> <span class="s">"Cary, NC"</span><br>
+<span class="k">domains:</span><br>
+&nbsp;&nbsp;<span class="c">-</span> <span class="s">Insurance &amp; Claims</span><br>
+&nbsp;&nbsp;<span class="c">-</span> <span class="s">Legal &amp; Finance</span><br>
+&nbsp;&nbsp;<span class="c">-</span> <span class="s">Trading &amp; Energy</span><br>
+<span class="k">currently_building:</span><br>
+&nbsp;&nbsp;<span class="c">-</span> <span class="s">LangChain agents</span><br>
+&nbsp;&nbsp;<span class="c">-</span> <span class="s">RAG + MCP tool servers</span><br>
+&nbsp;&nbsp;<span class="c">-</span> <span class="s">Java 17 microservices</span><br>
+<span class="k">status:</span> <span class="amber">shipping</span><span class="cursor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">about</p>
+        <h2>Full-stack under the hood, agentic on top.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>
+            I'm a <b>Full-Stack Lead Java Developer</b> with 14+ years of enterprise experience designing
+            scalable backend services, RESTful APIs and modern web applications — across insurance, legal,
+            finance, trading and energy. My core is <b>Java 8–17, Spring Boot and microservices</b>, paired
+            with <b>Angular and React</b> on the front end.
+          </p>
+          <p>
+            Over the past few years that core has grown a second discipline: building
+            <b>production-grade AI agents</b> on top of those same systems — LangChain and LangGraph
+            orchestration, RAG pipelines over ChromaDB with hybrid BM25 + vector search, and
+            <b>MCP servers</b> that expose enterprise microservices as LLM-consumable tools. I treat AI
+            features the same way I treat any other service: versioned, tested, observable and owned in
+            production, not left as a demo.
+          </p>
+          <p>
+            Day to day I lead and mentor a team of Java/API developers, drive architecture and design
+            reviews, own sprint delivery, and I'm usually the one called in for RCA when a production
+            incident needs a calm head and a fast fix.
+          </p>
+
+          <div class="edu">
+            <div class="edu-item"><span>Master of Computer Applications (MCA)</span><span>Andhra University, India</span></div>
+            <div class="edu-item"><span>Bachelor of Science (B.Sc.)</span><span>Andhra University, India</span></div>
+          </div>
+        </div>
+
+        <div class="stat-panel reveal">
+          <div class="stat-row">
+            <span class="stat-num">14+</span>
+            <span class="stat-label">years building production software</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">5</span>
+            <span class="stat-label">enterprises — MetLife, Thomson Reuters, IBM &amp; more</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">microservices led in current claims platform</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">60%</span>
+            <span class="stat-label">cut in p99 API latency under peak load</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">2d</span>
+            <span class="stat-label">release cycle, down from 2 weeks, after CI/CD overhaul</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">skills</p>
+        <h2>The stack, and what runs on it.</h2>
+        <p>Enterprise backend and frontend fundamentals, with a growing AI/LLM layer running in production.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card featured reveal">
+          <div class="skill-card-head"><h3>AI &amp; LLM Engineering</h3><span class="skill-idx">core focus</span></div>
+          <div class="chip-row">
+            <span class="tag ai">LangChain</span>
+            <span class="tag ai">LangGraph</span>
+            <span class="tag ai">RAG Pipelines</span>
+            <span class="tag ai">ChromaDB / VectorDB</span>
+            <span class="tag ai">Hybrid BM25 + Vector Search</span>
+            <span class="tag ai">MCP Server Design</span>
+            <span class="tag ai">OpenAI / GPT APIs</span>
+            <span class="tag ai">GitHub Copilot</span>
+            <span class="tag ai">NLP Pipelines</span>
+            <span class="tag ai">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head"><h3>Backend</h3><span class="skill-idx">01</span></div>
+          <div class="chip-row">
+            <span class="tag">Java 8–17</span>
+            <span class="tag">Spring Boot / Cloud</span>
+            <span class="tag">Spring Security</span>
+            <span class="tag">Hibernate / JPA</span>
+            <span class="tag">OAuth2 / JWT</span>
+            <span class="tag">REST &amp; SOAP APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head"><h3>Frontend</h3><span class="skill-idx">02</span></div>
+          <div class="chip-row">
+            <span class="tag">Angular 6–17</span>
+            <span class="tag">React 19</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">NgRx</span>
+            <span class="tag">React Hooks</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head"><h3>Databases</h3><span class="skill-idx">03</span></div>
+          <div class="chip-row">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Schema Design</span>
+            <span class="tag">Query Tuning</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head"><h3>Cloud &amp; DevOps</h3><span class="skill-idx">04</span></div>
+          <div class="chip-row">
+            <span class="tag">Azure (AKS, APIM)</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Kubernetes / Docker</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Azure DevOps</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head"><h3>Messaging &amp; Observability</h3><span class="skill-idx">05</span></div>
+          <div class="chip-row">
+            <span class="tag">Apache Kafka</span>
+            <span class="tag">ELK Stack</span>
+            <span class="tag">Splunk</span>
+            <span class="tag">Datadog APM</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">experience</p>
+        <h2>14 years, five companies, one throughline.</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="job reveal">
+          <span class="job-dot"></span>
+          <div class="job-head">
+            <span class="job-role">Lead Software Developer</span>
+            <span class="job-date">Sep 2022 — Present</span>
+          </div>
+          <div class="job-co">MetLife Services and Solutions · Cary, NC</div>
+          <div class="job-proj">Disability &amp; Absence Management Platform (DPA/TAM) — claims processing at Fortune-500 scale</div>
+          <ul>
+            <li>Architected <b>Java 17 / Spring Boot 3</b> microservices processing millions of disability claims annually across 10+ services.</li>
+            <li>Designed and deployed production <b>AI agents with LangChain</b>, RAG pipelines (ChromaDB, hybrid BM25 + vector search) and <b>MCP servers</b> for claims lookup &amp; policy retrieval, automating incident triage and compliance checks.</li>
+            <li>Led performance engineering achieving a <b>60% reduction in p99 API latency</b>; cut release cycles from 2 weeks to 2 days on Azure AKS.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tag">Java 17</span><span class="tag">Spring Boot 3</span><span class="tag ai">LangChain</span><span class="tag ai">RAG</span><span class="tag ai">MCP</span><span class="tag">Azure AKS</span><span class="tag">Kafka</span>
+          </div>
+        </div>
+
+        <div class="job reveal">
+          <span class="job-dot"></span>
+          <div class="job-head">
+            <span class="job-role">Technical Lead</span>
+            <span class="job-date">Feb 2017 — Aug 2022</span>
+          </div>
+          <div class="job-co">Thomson Reuters · Eagan, MN</div>
+          <div class="job-proj">TRAMS — enterprise CI/CD &amp; release management platform</div>
+          <ul>
+            <li>Built Spring Boot microservices for release automation and deployment orchestration across Legal, Finance and customer-facing product lines.</li>
+            <li>Improved deployment frequency by <b>40%</b> and cut infrastructure cost by <b>15%</b> via AWS high-availability architecture and Kubernetes CI/CD.</li>
+            <li>Led React 19 adoption and micro-frontend strategy; mentored engineers on Hooks and performance patterns.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tag">Spring Boot</span><span class="tag">React 19</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span><span class="tag">Kubernetes</span><span class="tag">ELK / Splunk</span>
+          </div>
+        </div>
+
+        <div class="job reveal">
+          <span class="job-dot"></span>
+          <div class="job-head">
+            <span class="job-role">Senior Java Developer</span>
+            <span class="job-date">Jan 2016 — Feb 2017</span>
+          </div>
+          <div class="job-co">Tech Mahindra · Bangalore, India</div>
+          <div class="job-proj">IPC Unigy — unified trading communications platform</div>
+          <ul>
+            <li>Built SIP-based real-time trading communication features for global trading-floor operations.</li>
+            <li>Delivered AWS serverless components (Lambda, API Gateway, CloudFormation), cutting operational costs by 15%.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tag">Java</span><span class="tag">Spring MVC</span><span class="tag">AWS Lambda</span><span class="tag">GitLab CI/CD</span>
+          </div>
+        </div>
+
+        <div class="job reveal">
+          <span class="job-dot"></span>
+          <div class="job-head">
+            <span class="job-role">Java Backend Developer</span>
+            <span class="job-date">Sep 2014 — Jan 2016</span>
+          </div>
+          <div class="job-co">IBM · Bangalore, India</div>
+          <div class="job-proj">Shell EDS — engineering data system for Heavy Oil operations</div>
+          <ul>
+            <li>Built Spring MVC/Hibernate modules integrating SAP via BizTalk for equipment tagging and asset management.</li>
+            <li>Built and maintained Oracle PL/SQL stored procedures, ETL workflows and data-sync processes.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tag">Java</span><span class="tag">Oracle PL/SQL</span><span class="tag">BizTalk</span><span class="tag">AWS</span>
+          </div>
+        </div>
+
+        <div class="job reveal">
+          <span class="job-dot"></span>
+          <div class="job-head">
+            <span class="job-role">Software Engineer</span>
+            <span class="job-date">Jun 2011 — Sep 2014</span>
+          </div>
+          <div class="job-co">Rescare Inc · Kolkata, India</div>
+          <div class="job-proj">Branch Performance — business operations &amp; inquiry management system</div>
+          <ul>
+            <li>Built Struts/Spring RESTful applications with Hibernate Criteria queries and DAO patterns.</li>
+            <li>Developed Angular 6 UI components with 508 compliance and Selenium automation testing.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="tag">Java</span><span class="tag">Struts</span><span class="tag">Oracle</span><span class="tag">Angular 6</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / AI HIGHLIGHTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">projects</p>
+        <h2>AI/LLM engineering highlights.</h2>
+        <p>Selected work bringing agentic AI into production enterprise systems.</p>
+      </div>
+
+      <div class="proj-grid">
+        <div class="proj-card reveal">
+          <span class="proj-num">01</span>
+          <h3>RAG Pipelines</h3>
+          <p>Production-grade Retrieval-Augmented Generation using ChromaDB with hybrid BM25 + vector search — deployed for claims-document Q&amp;A and policy-aware automated responses.</p>
+          <div class="chip-row"><span class="tag ai">ChromaDB</span><span class="tag ai">BM25</span><span class="tag ai">Vector Search</span></div>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">02</span>
+          <h3>MCP Servers</h3>
+          <p>Designed and deployed Model Context Protocol servers exposing enterprise microservices as LLM-consumable tool interfaces — zero-glue-code AI agent integrations across teams.</p>
+          <div class="chip-row"><span class="tag ai">MCP</span><span class="tag ai">Tool Interfaces</span></div>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">03</span>
+          <h3>Agentic Workflows</h3>
+          <p>LangGraph stateful multi-agent orchestration for incident triage, compliance automation and API contract validation — replacing brittle rule engines with adaptive pipelines.</p>
+          <div class="chip-row"><span class="tag ai">LangGraph</span><span class="tag ai">Multi-Agent</span></div>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">04</span>
+          <h3>NLP Pipelines</h3>
+          <p>Named-entity recognition, text classification, intent detection and semantic similarity using transformer models for automated claims intake and document parsing.</p>
+          <div class="chip-row"><span class="tag ai">NER</span><span class="tag ai">Transformers</span></div>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">05</span>
+          <h3>AI Code Review</h3>
+          <p>LLM-driven PR automation detecting anti-patterns, security vulnerabilities and performance bottlenecks in Java/Spring codebases — integrated directly into pull-request workflows.</p>
+          <div class="chip-row"><span class="tag ai">GitHub Copilot</span><span class="tag ai">Static Analysis</span></div>
+        </div>
+        <div class="proj-card reveal">
+          <span class="proj-num">06</span>
+          <h3>Enterprise Microservices</h3>
+          <p>Java 17 / Spring Boot 3 microservice ecosystem processing millions of disability claims annually, with virtual threads and pattern matching cutting boilerplate across 10+ services.</p>
+          <div class="chip-row"><span class="tag">Java 17</span><span class="tag">Spring Boot 3</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <div>
+          <p class="eyebrow">contact</p>
+          <h2>Let's build something that ships.</h2>
+          <p>Open to Lead / Staff Engineer and AI Engineering roles where enterprise systems meet production AI. Reach out any time.</p>
+        </div>
+        <div class="contact-list">
+          <a class="contact-row" href="mailto:ashokravipalli777@gmail.com"><span class="k">email</span><span>ashokravipalli777@gmail.com</span></a>
+          <a class="contact-row" href="tel:+16128191491"><span class="k">phone</span><span>+1 612-819-1491</span></a>
+          <a class="contact-row" href="https://linkedin.com/in/ashok-ravipalli" target="_blank" rel="noopener"><span class="k">linkedin</span><span>/in/ashok-ravipalli</span></a>
+          <a class="contact-row" href="https://github.com/Ashok-Ravipalli" target="_blank" rel="noopener"><span class="k">github</span><span>/Ashok-Ravipalli</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Ashok Ravipalli — built with HTML, CSS &amp; a healthy amount of terminal nostalgia.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // active nav link on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const navAnchors = document.querySelectorAll('nav.links a');
+  const setActive = (id) => {
+    navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  };
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(s => navObserver.observe(s));
+
+  // reveal-on-scroll
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
 
